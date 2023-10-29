@@ -1,0 +1,84 @@
+.footer {
+	background-color: $purple-color;
+	&__container {
+		border-radius: 2.6875rem 2.6875rem 0rem 0rem;
+		background: #f3f3f3;
+		@include adaptiv-value("padding-top", toPX(5.64), toPX(2.87), 1);
+	}
+
+	&__grid {
+		display: grid;
+		grid-template-columns: 2fr 1fr 1fr;
+		padding-bottom: 2.8rem;
+	}
+
+	&__col {
+	}
+
+	&__logo {
+		color: $purple-color;
+		font-family: $font-family-manrope;
+		font-size: 2.0515rem;
+		font-style: normal;
+		font-weight: 800;
+		line-height: normal;
+		margin-bottom: 1.88rem;
+	}
+
+	&__item {
+		display: flex;
+		flex-direction: column;
+	}
+
+	&__label {
+		color: rgba($color: #0f0f0f, $alpha: 0.7);
+		font-family: $font-family-manrope;
+		font-size: 1.375rem;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 2.36681rem; /* 172.133% */
+	}
+
+	&__subtitle {
+		color: $purple-color;
+		font-family: $font-family-manrope;
+		font-size: 2rem;
+		font-style: normal;
+		font-weight: 700;
+		line-height: 2.71056rem; /* 135.529% */
+		margin-bottom: 2.25rem;
+	}
+
+	&__menu {
+		display: flex;
+		flex-direction: column;
+		gap: 1.31rem;
+	}
+
+	&__social {
+		display: flex;
+		align-items: center;
+		gap: 0.75rem;
+	}
+
+	&__content {
+		color: rgba($color: #0f0f0f, $alpha: 0.7);
+		font-family: $font-family-manrope;
+		font-size: 1rem;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 1.08556rem; /* 108.558% */
+		max-width: 28rem;
+	}
+
+	&__subitem {
+		display: flex;
+		flex-direction: column;
+		gap: 0.75rem;
+	}
+
+	&__line {
+		padding-top: 2.19rem;
+		border-top: 0.0625rem solid rgba($color: #0f0f0f, $alpha: 0.3);
+	}
+}

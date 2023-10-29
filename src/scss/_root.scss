@@ -1,0 +1,149 @@
+html,
+body {
+	height: 100%;
+	box-sizing: border-box;
+}
+
+*,
+*:after,
+*::before {
+	box-sizing: inherit;
+}
+
+body {
+	font-family: $font-family-inter;
+	font-weight: normal;
+	font-size: 16px;
+}
+
+a {
+	text-decoration: none;
+}
+
+.wrapper {
+	min-height: 100%;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+}
+
+.main {
+	flex: 1 1 auto;
+}
+
+.tab__content {
+	transition: all 0.8s ease-in-out;
+}
+
+.accordion-content {
+	max-height: 0;
+	overflow: hidden;
+	transition: all 0.5s ease-in-out;
+
+	&.active {
+		max-height: 20rem;
+		transition: all 0.5s ease-in-out;
+	}
+}
+
+.lock {
+	overflow: hidden !important;
+}
+
+.title {
+	color: $purple-color;
+	text-align: center;
+	font-family: $font-family-manrope;
+	@include adaptiv-value("font-size", toPX(5.625), toPX(2.75), 1);
+	font-style: normal;
+	font-weight: 700;
+	line-height: 116.6%; /* 6.55875rem */
+	&.white {
+		color: var(--white, #fff);
+	}
+	&.purple {
+		color: $purple-color;
+	}
+}
+
+.button {
+	color: #222;
+	font-family: $font-family-inter;
+	font-size: 1rem;
+	font-style: normal;
+	font-weight: 500;
+	line-height: normal;
+	text-transform: uppercase;
+	border-radius: 0.625rem;
+	padding: 1.06rem 1.84rem;
+	&.transparent {
+		border: 1px solid #222;
+	}
+	&.purple {
+		background-color: $purple-color;
+		border: 1px solid $purple-color;
+		color: var(--white, #fff);
+	}
+}
+
+@include media-width($sm) {
+	.accordion-content-mobile {
+		max-height: 0;
+		overflow: hidden;
+		transition: all 0.5s ease-in-out;
+
+		&.active {
+			max-height: 20rem;
+			transition: all 0.5s ease-in-out;
+		}
+	}
+}
+
+.container {
+	max-width: $container-width;
+	margin: 0 auto;
+	width: 100%;
+}
+
+@include media-width(1600px) {
+	.container {
+		max-width: 1400px;
+	}
+}
+
+@include media-width(1450px) {
+	.container {
+		max-width: 1300px;
+	}
+}
+
+@include media-width(1350px) {
+	.container {
+		max-width: 1150px;
+	}
+}
+
+@include media-width(1200px) {
+	.container {
+		max-width: 920px;
+	}
+}
+
+@include media-width($md) {
+	.container {
+		max-width: 800px;
+	}
+}
+
+@include media-width(850px) {
+	.container {
+		max-width: $sm;
+	}
+}
+
+@include media-width($sm) {
+	.container {
+		max-width: none;
+		padding: 0 1.25rem;
+	}
+}
