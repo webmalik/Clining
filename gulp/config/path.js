@@ -2,6 +2,7 @@ import * as nodePath from 'path';
 const rootFolder = nodePath.basename(nodePath.resolve());
 
 const buildFolder = `./dist`;
+const docsFolder = `./docs`;
 const srcFolder = `./src`;
 
 export const path = {
@@ -31,6 +32,7 @@ export const path = {
 	},
 	clean: buildFolder,
 	buildFolder: buildFolder,
+	docsFolder: docsFolder,
 	srcFolder: srcFolder,
 	rootFolder: rootFolder,
 	ftp: `dev`

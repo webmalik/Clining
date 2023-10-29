@@ -12,6 +12,7 @@ global.app = {
 }
 
 import { copy } from "./gulp/tasks/copy.js";
+import { docs } from "./gulp/tasks/docs.js";
 import { reset } from "./gulp/tasks/reset.js";
 import { html } from "./gulp/tasks/html.js";
 import { server } from "./gulp/tasks/server.js";
