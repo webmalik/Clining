@@ -1,0 +1,101 @@
+.mission {
+	&__container {
+		display: flex;
+		flex-direction: column;
+		@include adaptiv-value("gap", toPX(5.62), toPX(2.5), 1);
+		@include adaptiv-value("margin-top", toPX(11.25), toPX(5.63), 1);
+	}
+
+	&__header {
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-end;
+	}
+
+	&__title {
+		text-align: left;
+
+		span {
+			@include adaptiv-value("font-size", toPX(1.75), toPX(1.066), 1);
+			font-size: 1.06594rem;
+		}
+	}
+
+	&__link {
+		color: $purple-color;
+		font-family: $font-family-manrope;
+		font-size: 1rem;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 1.65rem; /* 165% */
+		border-radius: 2.4375rem;
+		background: #f3f3f3;
+		padding: 0.63rem 1.56rem;
+	}
+
+	&__content {
+		display: flex;
+		@include adaptiv-value("gap", toPX(8.56), toPX(2.5), 1);
+	}
+
+	&__items {
+		display: flex;
+		flex-direction: column;
+		@include adaptiv-value("gap", toPX(3.12), toPX(0.5), 1);
+		@include adaptiv-value("min-width", toPX(34.375), toPX(20), 1);
+		//min-width: 34.375rem;
+	}
+
+	&__item {
+		display: flex;
+		flex-direction: column;
+		border-radius: 0.625rem;
+		background: #f4f4f4;
+		padding: 2rem;
+	}
+
+	&__label {
+		color: rgba($color: #0f0f0f, $alpha: 0.5);
+		font-family: $font-family-manrope;
+		@include adaptiv-value("font-size", toPX(1.75), toPX(1.125), 1);
+		font-style: normal;
+		font-weight: 400;
+		line-height: 2.86844rem; /* 163.912% */
+	}
+
+	&__text {
+		width: 100%;
+		color: var(--Black, #0f0f0f);
+		font-family: $font-family-manrope;
+		@include adaptiv-value("font-size", toPX(1.75), toPX(1.125), 1);
+		font-style: normal;
+		font-weight: 400;
+		line-height: 2.39806rem;
+		display: flex;
+		flex-direction: column;
+		@include adaptiv-value("gap", toPX(3.38), toPX(1.38), 1);
+		@include adaptiv-value("margin-bottom", toPX(10), toPX(5.63), 1);
+
+		picture,
+		img {
+			max-width: 57.0625rem;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+		span {
+			color: $purple-color;
+		}
+	}
+}
+@include media-width($md) {
+	.mission {
+		&__content {
+			flex-direction: column;
+		}
+
+		&__link {
+			display: none;
+		}
+	}
+}
