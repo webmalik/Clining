@@ -63,21 +63,28 @@ button {
 @font-face {
   font-family: "Inter";
   font-display: swap;
+  src: url("../fonts/Inter-500.woff") format("woff"), url("../fonts/Inter-500.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Inter";
+  font-display: swap;
+  src: url("../fonts/Inter-500.woff") format("woff"), url("../fonts/Inter-500.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Inter";
+  font-display: swap;
   src: url("../fonts/Inter-400.woff") format("woff"), url("../fonts/Inter-400.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
 }
 @font-face {
-  font-family: "Inter";
+  font-family: "Manrope";
   font-display: swap;
-  src: url("../fonts/Inter-500.woff") format("woff"), url("../fonts/Inter-500.woff2") format("woff2");
-  font-weight: 500;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Inter";
-  font-display: swap;
-  src: url("../fonts/Inter-500.woff") format("woff"), url("../fonts/Inter-500.woff2") format("woff2");
+  src: url("../fonts/Manrope-500.woff") format("woff"), url("../fonts/Manrope-500.woff2") format("woff2");
   font-weight: 500;
   font-style: normal;
 }
@@ -86,13 +93,6 @@ button {
   font-display: swap;
   src: url("../fonts/Manrope-400.woff") format("woff"), url("../fonts/Manrope-400.woff2") format("woff2");
   font-weight: 400;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Manrope";
-  font-display: swap;
-  src: url("../fonts/Manrope-500.woff") format("woff"), url("../fonts/Manrope-500.woff2") format("woff2");
-  font-weight: 500;
   font-style: normal;
 }
 @font-face {
@@ -119,22 +119,22 @@ button {
 @font-face {
   font-family: "Manrope";
   font-display: swap;
-  src: url("../fonts/Manrope-700.woff") format("woff"), url("../fonts/Manrope-700.woff2") format("woff2");
-  font-weight: 700;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Manrope";
-  font-display: swap;
-  src: url("../fonts/Manrope-700.woff") format("woff"), url("../fonts/Manrope-700.woff2") format("woff2");
-  font-weight: 700;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Manrope";
-  font-display: swap;
   src: url("../fonts/Manrope-400.woff") format("woff"), url("../fonts/Manrope-400.woff2") format("woff2");
   font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Manrope";
+  font-display: swap;
+  src: url("../fonts/Manrope-700.woff") format("woff"), url("../fonts/Manrope-700.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Manrope";
+  font-display: swap;
+  src: url("../fonts/Manrope-700.woff") format("woff"), url("../fonts/Manrope-700.woff2") format("woff2");
+  font-weight: 700;
   font-style: normal;
 }
 @font-face {
@@ -224,6 +224,12 @@ a {
 }
 .title.purple {
   color: #716beb;
+}
+.title.yellow {
+  color: #fecb6b;
+}
+.title.left {
+  text-align: left;
 }
 .title.medium {
   font-weight: 500;
@@ -1618,6 +1624,14 @@ a {
     margin-bottom: calc(4.48px + 5.76 * ((100vw - 375px) / 1225));
   }
 }
+.rate__star {
+  max-width: 113px;
+}
+@media (max-width: 1600px) {
+  .rate__star {
+    max-width: calc(50px + 63 * ((100vw - 375px) / 1225));
+  }
+}
 .rate__star picture,
 .rate__star img {
   width: 100%;
@@ -1627,23 +1641,79 @@ a {
 .rate__desc {
   color: var(--Black, #0f0f0f);
   font-family: "Manrope", sans-serif;
-  font-size: 1.75rem;
+  font-size: 28px;
   font-style: normal;
   font-weight: 400;
   line-height: 2.68075rem; /* 153.186% */
   text-align: center;
 }
+@media (max-width: 1600px) {
+  .rate__desc {
+    font-size: calc(16px + 12 * ((100vw - 375px) / 1225));
+  }
+}
 .rate__company {
   display: flex;
+  gap: 50.24px;
   gap: 3.14rem;
   align-items: center;
   justify-content: center;
+}
+@media (max-width: 1600px) {
+  .rate__company {
+    gap: calc(8px + 42.24 * ((100vw - 375px) / 1225));
+  }
+}
+.rate__company picture,
+.rate__company img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.rate__company picture:first-child,
+.rate__company img:first-child {
+  max-width: 189px;
+}
+@media (max-width: 1600px) {
+  .rate__company picture:first-child,
+  .rate__company img:first-child {
+    max-width: calc(83px + 106 * ((100vw - 375px) / 1225));
+  }
+}
+.rate__company picture:nth-child(2),
+.rate__company img:nth-child(2) {
+  max-width: 279px;
+}
+@media (max-width: 1600px) {
+  .rate__company picture:nth-child(2),
+  .rate__company img:nth-child(2) {
+    max-width: calc(123px + 156 * ((100vw - 375px) / 1225));
+  }
+}
+.rate__company picture:nth-child(3),
+.rate__company img:nth-child(3) {
+  max-width: 172px;
+  max-width: rem;
+}
+@media (max-width: 1600px) {
+  .rate__company picture:nth-child(3),
+  .rate__company img:nth-child(3) {
+    max-width: calc(76px + 96 * ((100vw - 375px) / 1225));
+  }
 }
 
 .faq__header {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
+}
+.faq__page {
+  margin-top: 44.96px;
+}
+@media (max-width: 1600px) {
+  .faq__page {
+    margin-top: calc(65.92px + -20.96 * ((100vw - 375px) / 1225));
+  }
 }
 .faq__title {
   text-align: left;
@@ -1713,14 +1783,29 @@ a {
   }
 }
 .faq__img {
-  width: 3.375rem;
-  height: 3.375rem;
-  padding: 1rem;
+  min-width: 54px;
+  min-height: 54px;
+  padding: 16px;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 50%;
   background-color: #f3f3f3;
+}
+@media (max-width: 1600px) {
+  .faq__img {
+    min-width: calc(44px + 10 * ((100vw - 375px) / 1225));
+  }
+}
+@media (max-width: 1600px) {
+  .faq__img {
+    min-height: calc(44px + 10 * ((100vw - 375px) / 1225));
+  }
+}
+@media (max-width: 1600px) {
+  .faq__img {
+    padding: calc(12px + 4 * ((100vw - 375px) / 1225));
+  }
 }
 .faq__img svg {
   width: 100%;
@@ -1734,4 +1819,117 @@ a {
 }
 .faq__img.active svg path:first-child {
   transform: rotate(90deg);
+}
+
+.subfooter__title {
+  margin: 0 auto 0;
+  padding-top: 88px;
+}
+@media (max-width: 1600px) {
+  .subfooter__title {
+    padding-top: calc(65.92px + 22.08 * ((100vw - 375px) / 1225));
+  }
+}
+.subfooter__contacts {
+  margin-top: 35.04px;
+  padding-bottom: 180px;
+}
+@media (max-width: 1600px) {
+  .subfooter__contacts {
+    margin-top: calc(40px + -4.96 * ((100vw - 375px) / 1225));
+  }
+}
+@media (max-width: 1600px) {
+  .subfooter__contacts {
+    padding-bottom: calc(89.92px + 90.08 * ((100vw - 375px) / 1225));
+  }
+}
+.subfooter__form {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 50px;
+}
+@media (max-width: 1600px) {
+  .subfooter__form {
+    gap: calc(17.92px + 32.08 * ((100vw - 375px) / 1225));
+  }
+}
+.subfooter__form input {
+  color: var(--white, #fff);
+  font-family: "Manrope", sans-serif;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 2.36681rem; /* 135.247% */
+  padding: 1.94rem;
+  background-color: transparent;
+  outline: none;
+  border-radius: 0.625rem;
+  border: 1px solid var(--white, #fff);
+}
+@media (max-width: 1600px) {
+  .subfooter__form input {
+    font-size: calc(16px + 12 * ((100vw - 375px) / 1225));
+  }
+}
+.subfooter__form input::placeholder {
+  color: var(--white, #fff);
+  font-family: "Manrope", sans-serif;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 2.36681rem; /* 135.247% */
+}
+@media (max-width: 1600px) {
+  .subfooter__form input::placeholder {
+    font-size: calc(16px + 12 * ((100vw - 375px) / 1225));
+  }
+}
+.subfooter__form button {
+  color: var(--Perple, #716beb);
+  text-align: center;
+  font-family: "Manrope", sans-serif;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 2.39806rem;
+  background-color: #fff;
+  border-radius: 0.625rem;
+  padding: 1.38rem 0 1.44rem;
+}
+@media (max-width: 1600px) {
+  .subfooter__form button {
+    font-size: calc(16px + 12 * ((100vw - 375px) / 1225));
+  }
+}
+
+@media (max-width: 992px) {
+  .subfooter__form {
+    grid-template-columns: 1fr;
+  }
+  .subfooter__form input {
+    color: #0f0f0f;
+    font-family: "Manrope", sans-serif;
+    padding: 1.44rem 1.06rem;
+    background-color: transparent;
+    outline: none;
+    border-radius: 0.625rem;
+    background-color: #fff;
+    border: 1px solid var(--white, #fff);
+  }
+  .subfooter__form input::placeholder {
+    color: #0f0f0f;
+    font-family: "Manrope", sans-serif;
+  }
+  .subfooter__form button {
+    color: #0f0f0f;
+    text-align: center;
+    font-family: "Manrope", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 2.39806rem;
+    background-color: #fecb6b;
+    border-radius: 0.625rem;
+    padding: 1.38rem 0 1.44rem;
+  }
 }

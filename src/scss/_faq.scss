@@ -5,6 +5,10 @@
 		align-items: flex-end;
 	}
 
+	&__page {
+		@include adaptiv-value("margin-top", toPX(2.81), toPX(4.12), 1);
+	}
+
 	&__title {
 		text-align: left;
 	}
@@ -54,9 +58,9 @@
 	}
 
 	&__img {
-		width: 3.375rem;
-		height: 3.375rem;
-		padding: 1rem;
+		@include adaptiv-value("min-width", toPX(3.375), toPX(2.75), 1);
+		@include adaptiv-value("min-height", toPX(3.375), toPX(2.75), 1);
+		@include adaptiv-value("padding", toPX(1), toPX(0.75), 1);
 		display: flex;
 		align-items: center;
 		justify-content: center;

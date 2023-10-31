@@ -64,6 +64,13 @@ a {
 	&.purple {
 		color: $purple-color;
 	}
+	&.yellow {
+		color: $yellow-color;
+	}
+
+	&.left {
+		text-align: left;
+	}
 
 	&.medium {
 		font-weight: 500;
