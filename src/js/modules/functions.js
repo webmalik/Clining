@@ -31,3 +31,61 @@ export function burgerMenu() {
 	});
 
 }
+
+export function accordion(mode = true) {
+	const accordionTriggers = document.querySelectorAll('.accordion-trigger');
+
+	// Додати обробник подій для кожного заголовку
+	accordionTriggers.forEach(trigger => {
+		trigger.addEventListener('click', () => {
+			if (mode) {
+				// Закрити всі аккордеони, крім того, який був клікнутий
+				accordionTriggers.forEach(otherTrigger => {
+					if (otherTrigger !== trigger) {
+						otherTrigger.classList.remove('active');
+						const otherContent = otherTrigger.nextElementSibling;
+						let parentContainer = otherTrigger.parentNode.parentNode;
+						otherContent.classList.remove('active');
+					}
+				});
+			}
+
+			trigger.classList.toggle('active');
+
+			const content = trigger.nextElementSibling;
+			const wrapper = trigger.parentNode;
+
+			const img = wrapper.nextElementSibling;
+
+			content.classList.toggle('active');
+			img.classList.toggle('active');
+		});
+	});
+}
+
+export function accordionMobile(mode = true) {
+	const accordionTriggers = document.querySelectorAll('.accordion-trigger-mobile');
+	if (window.innerWidth < 767) {
+		accordionTriggers.forEach(trigger => {
+			trigger.addEventListener('click', () => {
+				if (mode) {
+					// Закрити всі аккордеони, крім того, який був клікнутий
+					accordionTriggers.forEach(otherTrigger => {
+						if (otherTrigger !== trigger) {
+							otherTrigger.classList.remove('active');
+							const otherContent = otherTrigger.nextElementSibling;
+							let parentContainer = otherTrigger.parentNode.parentNode;
+							otherContent.classList.remove('active');
+						}
+					});
+				}
+
+				trigger.classList.toggle('active');
+
+				const content = trigger.nextElementSibling;
+
+				content.classList.toggle('active');
+			});
+		});
+	}
+}

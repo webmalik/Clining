@@ -19,8 +19,8 @@
 
 	&__content {
 		display: flex;
-		margin-top: 6.56rem;
-		gap: 3.13rem;
+		@include adaptiv-value("margin-top", toPX(6.56), toPX(3), 1);
+		@include adaptiv-value("gap", toPX(3.13), toPX(1.25), 1);
 	}
 
 	&__wrapper {
@@ -32,7 +32,7 @@
 
 	&__item {
 		position: relative;
-		padding: 2.63rem;
+		@include adaptiv-value("padding", toPX(2.63), toPX(1.19), 1);
 		border-radius: 0.625rem;
 		border: 1px solid var(--Perple, #716beb);
 		&.inverce {
@@ -71,10 +71,12 @@
 	&__desc {
 		color: #716beb;
 		font-family: $font-family-manrope;
-		font-size: 1rem;
+		@include adaptiv-value("font-size", toPX(1), toPX(0.75), 1);
 		font-style: normal;
 		font-weight: 400;
 		line-height: 2.36681rem; /* 236.683% */
+		@include adaptiv-value("margin-top", toPX(0.25), toPX(0.44), 1);
+		@include adaptiv-value("margin-bottom", toPX(1.75), toPX(1.25), 1);
 	}
 
 	&__grid {
@@ -86,7 +88,7 @@
 		li {
 			color: #fff;
 			font-family: $font-family-manrope;
-			font-size: 1.75rem;
+			@include adaptiv-value("font-size", toPX(1.75), toPX(1.125), 1);
 			font-style: normal;
 			font-weight: 400;
 			line-height: 2.36681rem; /* 135.247% */
@@ -101,7 +103,7 @@
 		li {
 			color: var(--Perple, #716beb);
 			font-family: $font-family-manrope;
-			font-size: 1.75rem;
+			@include adaptiv-value("font-size", toPX(1.75), toPX(1.125), 1);
 			font-style: normal;
 			font-weight: 400;
 			line-height: 2.36681rem; /* 135.247% */
@@ -125,7 +127,7 @@
 		padding: 0.5rem 1.4375rem;
 		color: var(--white, #fff);
 		font-family: $font-family-manrope;
-		font-size: 1.375rem;
+		@include adaptiv-value("font-size", toPX(1.375), toPX(0.875), 1);
 		font-style: normal;
 		font-weight: 400;
 		line-height: 2.36681rem; /* 172.133% */
@@ -133,6 +135,8 @@
 		&.absolute {
 			position: absolute;
 			background-color: transparent !important;
+			bottom: 0;
+			left: 0;
 		}
 	}
 
@@ -140,9 +144,16 @@
 		position: absolute;
 		bottom: 0;
 		right: 0;
+		picture,
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
 	}
 
 	&__right {
+		position: relative;
 		padding: 2.62rem;
 		background: #f3f3f3;
 		max-width: 37.5rem;
@@ -152,23 +163,108 @@
 			background: #e0deff;
 			color: var(--Perple, #716beb);
 			font-family: $font-family-manrope;
-			font-size: 1.375rem;
+			@include adaptiv-value("font-size", toPX(1.375), toPX(0.875), 1);
 			font-style: normal;
 			font-weight: 400;
 			line-height: 2.36681rem; /* 172.133% */
+			display: inline-flex;
+
+			justify-content: flex-start;
 		}
 	}
 
 	&__text {
 		color: var(--Perple, #716beb);
 		font-family: $font-family-manrope;
-		font-size: 1.75rem;
+		@include adaptiv-value("font-size", toPX(1.75), toPX(1.125), 1);
 		font-style: normal;
 		font-weight: 400;
 		line-height: 2.36681rem; /* 135.247% */
+		@include adaptiv-value("margin-top", toPX(0.75), toPX(0.5), 1);
+		@include adaptiv-value("margin-bottom", toPX(2.5), toPX(5.19), 1);
 	}
 
 	&__right-img {
 		position: absolute;
+		bottom: -2.5rem;
+		right: 0;
+	}
+}
+
+@include media-width($md) {
+	.choose {
+		&__item {
+			overflow: hidden;
+		}
+		&__grid {
+			grid-template-columns: 1fr;
+			position: relative;
+			z-index: 2;
+		}
+
+		&__grid-3 {
+			grid-template-columns: 1fr 1fr;
+		}
+		&__content {
+			flex-direction: column;
+		}
+		&__buttons {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			position: relative;
+			z-index: 2;
+		}
+		&__right {
+			border-radius: 0.625rem;
+			padding: 1.19rem;
+			overflow: hidden;
+		}
+		&__button {
+			padding: 0 0.75rem;
+			display: flex;
+			justify-content: center;
+
+			&.absolute {
+				position: relative;
+				display: block;
+				svg {
+					max-width: 2.75rem;
+					max-height: 2.75rem;
+					height: 100%;
+					width: 100%;
+					margin-top: 1.44rem;
+				}
+			}
+		}
+		&__circle {
+			order: 3;
+			svg {
+				max-width: 2.75rem;
+				max-height: 2.75rem;
+				height: 100%;
+				width: 100%;
+			}
+		}
+		&__image {
+			max-width: 15rem;
+			z-index: 1;
+			transform: rotate(7.503deg);
+			bottom: -5rem;
+		}
+
+		&__right-img {
+			bottom: -1rem;
+			right: -1.5rem;
+			z-index: 1;
+			picture,
+			img {
+				max-width: 13rem;
+			}
+		}
+
+		&__text {
+			position: relative;
+			z-index: 3;
+		}
 	}
 }
