@@ -1,11 +1,38 @@
 .subfooter {
 	&__title {
-		margin: 0 auto 0;
+		margin: 0 auto;
 		@include adaptiv-value("padding-top", toPX(5.5), toPX(4.12), 1);
 	}
 	&__contacts {
 		@include adaptiv-value("margin-top", toPX(2.19), toPX(2.5), 1);
 		@include adaptiv-value("padding-bottom", toPX(11.25), toPX(5.62), 1);
+
+		&.mt1 {
+			margin-top: -3rem;
+		}
+	}
+
+	&__header {
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-end;
+		@include adaptiv-value("margin-bottom", toPX(2.56), toPX(1.19), 1);
+
+		.subfooter__title {
+			margin-left: 0;
+		}
+	}
+
+	&__wrapper {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		@include adaptiv-value("padding-bottom", toPX(5.63), toPX(3.75), 1);
+	}
+
+	&__link {
+		background: #4c46b8;
+		color: #fff;
 	}
 
 	&__form {
@@ -47,6 +74,29 @@
 			padding: 1.38rem 0 1.44rem;
 		}
 	}
+
+	&__text {
+		color: var(--white, #fff);
+		font-family: $font-family-manrope;
+		@include adaptiv-value("font-size", toPX(1.75), toPX(1.125), 1);
+		font-style: normal;
+		font-weight: 400;
+		line-height: 2.36681rem; /* 135.247% */
+		max-width: 40rem;
+	}
+
+	&__button {
+		color: var(--Perple, #716beb);
+		text-align: center;
+		font-family: $font-family-manrope;
+		@include adaptiv-value("font-size", toPX(1.75), toPX(1), 1);
+		font-style: normal;
+		font-weight: 400;
+		line-height: 2.39806rem;
+		background-color: #fff;
+		border-radius: 0.625rem;
+		padding: 1.38rem 7.75rem 1.44rem;
+	}
 }
 @include media-width($md) {
 	.subfooter {
@@ -79,6 +129,27 @@
 				border-radius: 0.625rem;
 				padding: 1.38rem 0 1.44rem;
 			}
+		}
+
+		&__button {
+			color: $black-color;
+			text-align: center;
+			font-family: $font-family-manrope;
+			font-style: normal;
+			font-weight: 400;
+			line-height: 2.39806rem;
+			background-color: $yellow-color;
+			border-radius: 0.625rem;
+			padding: 1.38rem 0 1.44rem;
+			width: 100%;
+			margin-top: 1rem;
+		}
+		&__wrapper {
+			flex-direction: column;
+		}
+
+		&__link {
+			display: none;
 		}
 	}
 }

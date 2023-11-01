@@ -135,15 +135,15 @@
 		&.absolute {
 			position: absolute;
 			background-color: transparent !important;
-			bottom: 0;
-			left: 0;
+			bottom: 1.5rem;
+			left: 1rem;
 		}
 	}
 
 	&__image {
 		position: absolute;
-		bottom: 0;
-		right: 0;
+		bottom: -3px;
+		right: 5px;
 		picture,
 		img {
 			width: 100%;

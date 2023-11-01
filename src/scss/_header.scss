@@ -1,6 +1,10 @@
 .header {
 	background-color: $purple-color;
 
+	&.header__white {
+		background-color: #fff !important;
+	}
+
 	&__container {
 		display: flex;
 		background: #f3f3f3;

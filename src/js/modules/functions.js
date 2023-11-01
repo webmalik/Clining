@@ -89,3 +89,51 @@ export function accordionMobile(mode = true) {
 		});
 	}
 }
+
+export function tabs(container) {
+	if (container) {
+		document.addEventListener("DOMContentLoaded", function () {
+			const tabButtons = container.querySelectorAll(".tab__button");
+			const tabContents = container.querySelectorAll(".tab__content");
+
+			tabButtons.forEach(function (button) {
+				button.addEventListener("click", function (e) {
+					e.preventDefault();
+					const tabId = this.getAttribute("data-tab");
+					showTab(tabId);
+				});
+			});
+
+			function showTab(tabId) {
+				tabContents.forEach(function (content) {
+					if (content.getAttribute("data-tab") === tabId) {
+						content.style.opacity = 0;
+						content.style.display = "flex";
+						content.classList.add('active');
+						setTimeout(function () {
+							content.style.opacity = 1;
+						}, 50);
+					} else {
+						content.style.opacity = 0;
+						content.style.display = "none";
+						setTimeout(function () {
+							content.classList.remove('active');
+							content.style.opacity = 0;
+						}, 50);
+					}
+				});
+				tabButtons.forEach(function (button) {
+					if (button.getAttribute("data-tab") === tabId) {
+						button.classList.add("active");
+					} else {
+						button.classList.remove("active");
+					}
+				});
+
+			}
+
+			showTab(tabButtons[0].getAttribute("data-tab"));
+		});
+	}
+
+}
