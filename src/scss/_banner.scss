@@ -144,7 +144,9 @@
 	}
 
 	&__title {
-		margin-left: 0;
+		&.ml {
+			margin-left: 0;
+		}
 	}
 
 	&__buttons {
