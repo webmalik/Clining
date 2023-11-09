@@ -36,13 +36,6 @@
 @font-face {
 	font-family: 'Manrope';
 	font-display: swap;
-	src: url("../fonts/Manrope-500.woff") format("woff"), url("../fonts/Manrope-500.woff2") format("woff2");
-	font-weight: 500;
-	font-style: normal;
-}
-@font-face {
-	font-family: 'Manrope';
-	font-display: swap;
 	src: url("../fonts/Manrope-400.woff") format("woff"), url("../fonts/Manrope-400.woff2") format("woff2");
 	font-weight: 400;
 	font-style: normal;
@@ -78,21 +71,28 @@
 @font-face {
 	font-family: 'Manrope';
 	font-display: swap;
+	src: url("../fonts/Manrope-500.woff") format("woff"), url("../fonts/Manrope-500.woff2") format("woff2");
+	font-weight: 500;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Manrope';
+	font-display: swap;
+	src: url("../fonts/Manrope-800.woff") format("woff"), url("../fonts/Manrope-800.woff2") format("woff2");
+	font-weight: 800;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Manrope';
+	font-display: swap;
+	src: url("../fonts/Manrope-800.woff") format("woff"), url("../fonts/Manrope-800.woff2") format("woff2");
+	font-weight: 800;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Manrope';
+	font-display: swap;
 	src: url("../fonts/Manrope-700.woff") format("woff"), url("../fonts/Manrope-700.woff2") format("woff2");
 	font-weight: 700;
-	font-style: normal;
-}
-@font-face {
-	font-family: 'Manrope';
-	font-display: swap;
-	src: url("../fonts/Manrope-800.woff") format("woff"), url("../fonts/Manrope-800.woff2") format("woff2");
-	font-weight: 800;
-	font-style: normal;
-}
-@font-face {
-	font-family: 'Manrope';
-	font-display: swap;
-	src: url("../fonts/Manrope-800.woff") format("woff"), url("../fonts/Manrope-800.woff2") format("woff2");
-	font-weight: 800;
 	font-style: normal;
 }
